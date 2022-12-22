@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import sys
+
+def factorise(number):
+
+    """ program prints the product of a number using two possible factors"""
+    for factor1 in range(2, number + 1, 1):
+
+        if number % factor1 == 0:
+            factor2 = number / factor1# = factor2
+    return factor1, factor2
+
+filename = sys.argv[1]
+
+with open(filename, 'r') as file:
+    for line in file.readlines():
+        number = int(line.rstrip())
+        factor1, factor2 = factorise(number)
+        print("{}={}*{}".format(number, factor1, factor2))
